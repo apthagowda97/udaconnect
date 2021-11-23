@@ -13,8 +13,8 @@ from kafka import KafkaProducer
 
 # Set up a Kafka producer
 TOPIC_NAME = 'location'
-KAFKA_PORT = os.environ["KAFKA_PORT"]
-KAFKA_SERVER = str(f'localhost:{KAFKA_PORT}')
+KAFKA_URL = os.environ["KAFKA_URL"]
+KAFKA_SERVER = str(f'{KAFKA_URL}')
 print("KAFKA SERVER",KAFKA_SERVER)
 kafka_producer = KafkaProducer(bootstrap_servers=KAFKA_SERVER)
 
