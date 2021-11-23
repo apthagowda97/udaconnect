@@ -28,7 +28,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./modules/location-consumer
-          file: Dockerfile
+          file: ./modules/location-consumer/Dockerfile
           platforms: linux/amd64
           push: true
           tags: apthagowda/location-consumer:latest
