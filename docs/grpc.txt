@@ -1,3 +1,11 @@
+Endpoint: localhost:30003
+
+- The GRPC endpoint is used to capture Location data in large volume and send the Data to Kafka Queue.
+- Parameters: id, person_id, longitude, latitude, creation_time
+
+
+Sample Code Snippet:
+
 import grpc
 import location_pb2
 import location_pb2_grpc
@@ -16,6 +24,5 @@ location = location_pb2.LocationMessage(
     creation_time="2020-07-07T10:37:06"
     
 )
-
 
 response = stub.Create(location)

@@ -1,0 +1,21 @@
+1. Persons API:
+
+- Because this is the primary API in the Udaconnect application.Separation from the API bundle makes sense. 
+- This also aids in the scaling of the Backend based on the website's traffic.
+
+
+2. Location API:
+
+- Based on the location ID, the Location API is used to extract the location from the database.
+- It will have less traffic than Persons API, so it seems reasonable to keep it separate from API Bundle.
+
+
+3. Location Producer:
+
+- Because the location data is captured from the mobile device, it's a GRPC-based Kafka Producer.
+- The traffic on these endpoints will be significantly increased, and Kafka will assist in the handling of a big amount data.
+
+
+4. Location Consumer:
+
+- A Kafka Consumer is a programme that reads data from a Kafka queue and writes it to a database. 
