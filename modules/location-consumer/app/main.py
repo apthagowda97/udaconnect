@@ -1,0 +1,20 @@
+import json
+import os
+from kafka import KafkaConsumer
+from consumer.services import LocationService
+from consumer.models import Location
+
+
+TOPIC_NAME = 'location'
+KAFKA_PORT = os.environ["KAFKA_PORT"]
+KAFKA_SERVER = str(f'localhost:{KAFKA_PORT}')
+kafka_consumer = KafkaConsumer(TOPIC_NAME, bootstrap_servers=KAFKA_SERVER)
+
+
+for message in kafka_consumer:
+
+    location_value = message.value
+    location_value = json.loads(location_value.decode('utf-8'))
+    print(location_value)
+    location: Location = LocationService.create(location_value)
+    print("Successfully Inserted!")

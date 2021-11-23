@@ -1,0 +1,1 @@
+kubectl exec -it kafka-0 -- kafka-topics.sh --create --topic location --replication-factor 1 --partitions 2 --bootstrap-server localhost:9092
