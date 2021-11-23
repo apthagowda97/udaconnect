@@ -52,9 +52,9 @@ spec:
             configMapKeyRef:
               name: db-env
               key: DB_PORT
-        - name: KAFKA_PORT
+        - name: KAFKA_URL
           valueFrom:
             configMapKeyRef:
               name: db-env
-              key: KAFKA_PORT
+              key: KAFKA_URL
       restartPolicy: Always

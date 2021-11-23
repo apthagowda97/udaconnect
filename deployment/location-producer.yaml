@@ -42,9 +42,9 @@ spec:
             memory: "256Mi"
             cpu: "256m"
         env:
-        - name: KAFKA_PORT
+        - name: KAFKA_URL
           valueFrom:
             configMapKeyRef:
               name: db-env
-              key: KAFKA_PORT
+              key: KAFKA_URL
       restartPolicy: Always
