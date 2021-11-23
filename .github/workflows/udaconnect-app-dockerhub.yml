@@ -27,8 +27,8 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: .
-          file: ./modules/udaconnect-api/Dockerfile
+          context: ./modules/udaconnect-api
+          file: ./Dockerfile
           platforms: linux/amd64
           push: true
           tags: apthagowda/udaconnect-app:latest
